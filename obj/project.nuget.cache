@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "XUhUH3ueYe6DbYBs7KZZB7NsQwOCExxr4Ry5jACAjpn29Waknvx03JERQkVMLUVeF4HDlpnRD2akiN97YCy6aw==",
+  "success": true,
+  "projectFilePath": "D:\\П\\курсы\\ASP.NET Core Web API. Практический курс (2021)\\2\\WebApiOwin\\WebApiOwin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.aspnet.webapi.owin\\5.2.7\\microsoft.aspnet.webapi.owin.5.2.7.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.owin\\4.0.1\\microsoft.owin.4.0.1.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.owin.diagnostics\\4.0.1\\microsoft.owin.diagnostics.4.0.1.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.owin.host.httplistener\\4.0.1\\microsoft.owin.host.httplistener.4.0.1.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.owin.hosting\\4.0.1\\microsoft.owin.hosting.4.0.1.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.owin.selfhost\\4.0.1\\microsoft.owin.selfhost.4.0.1.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

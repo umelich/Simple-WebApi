@@ -1,25 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿using System;
+using Microsoft.Owin.Hosting;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+namespace WebApiOwin
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    // dotnet new console --target-framework-override net461
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (WebApp.Start<Startup>("http://localhost:9000"))
+            {
+                Console.WriteLine("Press [enter] to quit...");
+                Console.ReadLine();
+            }
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
