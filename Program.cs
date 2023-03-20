@@ -1,125 +1,125 @@
-//using Microsoft.AspNetCore.Http;
-//using Microsoft.Extensions.FileProviders;
-//using System;
-//using System.Text.Json.Serialization;
-//using System.Text.Json;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
+using System;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 //var builder = WebApplication.CreateBuilder(args);
 //var app = builder.Build();
 
-////app. MapGet("/", () => "Hello World!");
+//app. MapGet("/", () => "Hello World!");
 
-////app.UseWelcomePage();
+//app.UseWelcomePage();
 
-////app.Run(async (context) => await context.Response.WriteAsync("Hello"));
+//app.Run(async (context) => await context.Response.WriteAsync("Hello"));
 
-//// app.Run(async (context) =>
-//// {
-////     var response = context.Response;
-////     response.ContentType = "text/html; charset=utf-8";
-////     await response.WriteAsync("<h2>Hello</h2><h3>Welcome to ASP.NET Core</h3>");
-//// });
+// app.Run(async (context) =>
+// {
+//     var response = context.Response;
+//     response.ContentType = "text/html; charset=utf-8";
+//     await response.WriteAsync("<h2>Hello</h2><h3>Welcome to ASP.NET Core</h3>");
+// });
 
-////app.Run(async (context) =>
-////{
-////    context.Response.ContentType = "text/html; charset=utf-8";
-////    var stringBuilder = new System.Text.StringBuilder("<table>");
+//app.Run(async (context) =>
+//{
+//    context.Response.ContentType = "text/html; charset=utf-8";
+//    var stringBuilder = new System.Text.StringBuilder("<table>");
 
-////    foreach (var header in context.Request.Headers)
-////    {
-////        stringBuilder.Append($"<tr><td>{header.Key}</td><td>{header.Value}</td></tr>");
-////    }
-////    stringBuilder.Append("</table>");
-////    await context.Response.WriteAsync(stringBuilder.ToString());
-////});
-
-//////app.Run(async (context) =>
-//////{
-//////    //context.Response.StatusCode = 404;
-
-//////    await context.Response.WriteAsync("<h2>Hello</h2><h3>Welcome to ASP.NET Core</h3>");
-//////});
+//    foreach (var header in context.Request.Headers)
+//    {
+//        stringBuilder.Append($"<tr><td>{header.Key}</td><td>{header.Value}</td></tr>");
+//    }
+//    stringBuilder.Append("</table>");
+//    await context.Response.WriteAsync(stringBuilder.ToString());
+//});
 
 ////app.Run(async (context) =>
 ////{
-////    var path = context.Request.Path;
-////    var fullPath = $"html/{path}";
-////    var response = context.Response;
+////    //context.Response.StatusCode = 404;
 
-////    response.ContentType = "text/html; charset=utf-8";
-////    if (File.Exists(fullPath))
-////    {
-////        await response.SendFileAsync(fullPath);
-////    }
-////    else
-////    {
-////        response.StatusCode = 404;
-////        await response.WriteAsync("<h2>Not Found</h2>");
-////    }
+////    await context.Response.WriteAsync("<h2>Hello</h2><h3>Welcome to ASP.NET Core</h3>");
 ////});
 
-////app.Run(async (context) =>
-////{
-////    var fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
-////    var fileinfo = fileProvider.GetFileInfo("forest.jpg");
+//app.Run(async (context) =>
+//{
+//    var path = context.Request.Path;
+//    var fullPath = $"html/{path}";
+//    var response = context.Response;
 
-////    context.Response.Headers.ContentDisposition = "attachment; filename=my_forest2.jpg";
-////    await context.Response.SendFileAsync(fileinfo);
-////});
+//    response.ContentType = "text/html; charset=utf-8";
+//    if (File.Exists(fullPath))
+//    {
+//        await response.SendFileAsync(fullPath);
+//    }
+//    else
+//    {
+//        response.StatusCode = 404;
+//        await response.WriteAsync("<h2>Not Found</h2>");
+//    }
+//});
 
-////app.Run(async (context) =>
-////{
-////    context.Response.ContentType = "text/html; charset=utf-8";
+//app.Run(async (context) =>
+//{
+//    var fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
+//    var fileinfo = fileProvider.GetFileInfo("forest.jpg");
 
-////    // если обращение идет по адресу "/postuser", получаем данные формы
-////    if (context.Request.Path == "/postuser")
-////    {
-////        var form = context.Request.Form;
-////        string name = form["name"];
-////        string age = form["age"];
-////        await context.Response.WriteAsync($"<div><p>Name: {name}</p><p>Age: {age}</p></div>");
-////    }
-////    else
-////    {
-////        await context.Response.SendFileAsync("html/index.html");
-////    }
-////});
+//    context.Response.Headers.ContentDisposition = "attachment; filename=my_forest2.jpg";
+//    await context.Response.SendFileAsync(fileinfo);
+//});
 
-////app.Run(async (context) =>
-////{
-////    Person tom = new("Tom", 22);
-////    await context.Response.WriteAsJsonAsync(tom);
-////});
-////app.Run();
+//app.Run(async (context) =>
+//{
+//    context.Response.ContentType = "text/html; charset=utf-8";
 
-////app.Run(async (context) =>
-////{
-////    var response = context.Response;
-////    var request = context.Request;
-////    if (request.Path == "/api/user")
-////    {
-////        var message = "Некорректные данные";   // содержание сообщения по умолчанию
-////        try
-////        {
-////            // пытаемся получить данные json
-////            var person = await request.ReadFromJsonAsync<Person>();
-////            if (person != null) // если данные сконвертированы в Person
-////                message = $"Name: {person.Name}  Age: {person.Age}";
-////        }
-////        catch { }
-////        // отправляем пользователю данные
-////        await response.WriteAsJsonAsync(new { text = message });
-////    }
-////    else
-////    {
-////        response.ContentType = "text/html; charset=utf-8";
-////        await response.SendFileAsync("html/index.html");
-////    }
-////});
+//    // если обращение идет по адресу "/postuser", получаем данные формы
+//    if (context.Request.Path == "/postuser")
+//    {
+//        var form = context.Request.Form;
+//        string name = form["name"];
+//        string age = form["age"];
+//        await context.Response.WriteAsync($"<div><p>Name: {name}</p><p>Age: {age}</p></div>");
+//    }
+//    else
+//    {
+//        await context.Response.SendFileAsync("html/index.html");
+//    }
+//});
 
-////app.Run();
+//app.Run(async (context) =>
+//{
+//    Person tom = new("Tom", 22);
+//    await context.Response.WriteAsJsonAsync(tom);
+//});
+//app.Run();
 
-////public record Person(string Name, int Age);
+//app.Run(async (context) =>
+//{
+//    var response = context.Response;
+//    var request = context.Request;
+//    if (request.Path == "/api/user")
+//    {
+//        var message = "Некорректные данные";   // содержание сообщения по умолчанию
+//        try
+//        {
+//            // пытаемся получить данные json
+//            var person = await request.ReadFromJsonAsync<Person>();
+//            if (person != null) // если данные сконвертированы в Person
+//                message = $"Name: {person.Name}  Age: {person.Age}";
+//        }
+//        catch { }
+//        // отправляем пользователю данные
+//        await response.WriteAsJsonAsync(new { text = message });
+//    }
+//    else
+//    {
+//        response.ContentType = "text/html; charset=utf-8";
+//        await response.SendFileAsync("html/index.html");
+//    }
+//});
+
+//app.Run();
+
+//public record Person(string Name, int Age);
 
 //app.Run(async (context) =>
 //{
@@ -361,42 +361,165 @@
 //    public string Name { get; set; } = "";
 //    public int Age { get; set; }
 //}
+//-------------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
 
+//app.Run(async (context) =>
+//{
+//    var response = context.Response;
+//    var request = context.Request;
+
+//    response.ContentType = "text/html; charset=utf-8";
+
+//    if (request.Path == "/upload" && request.Method == "POST")
+//    {
+//        IFormFileCollection files = request.Form.Files;
+//        // путь к папке, где будут храниться файлы
+//        var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
+//        // создаем папку для хранения файлов
+//        Directory.CreateDirectory(uploadPath);
+
+//        foreach (var file in files)
+//        {
+//            // путь к папке uploads
+//            string fullPath = $"{uploadPath}/{file.FileName}";
+
+//            // сохраняем файл в папку uploads
+//            using (var fileStream = new FileStream(fullPath, FileMode.Create))
+//            {
+//                await file.CopyToAsync(fileStream);
+//            }
+//        }
+//        await response.WriteAsync("Файлы успешно загружены");
+//    }
+//    else
+//    {
+//        await response.SendFileAsync("html/index.html");
+//    }
+//});
+
+//app.Run();
+//------------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//string date = "";
+
+//app.Use(async (context, next) =>
+//{
+//    date = DateTime.Now.ToShortDateString();
+//    await next.Invoke();                 // вызываем middleware из app.Run
+//    Console.WriteLine($"Current date: {date}");  // Current date: 08.12.2021
+//});
+
+//app.Run(async (context) => await context.Response.WriteAsync($"Date: {date}"));
+
+//app.Run();
+
+//--------------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.UseWhen(
+//    context => context.Request.Path == "/time", // если путь запроса "/time"
+//    appBuilder =>
+//    {
+//        // логгируем данные - выводим на консоль приложения
+//        appBuilder.Use(async (context, next) =>
+//        {
+//            var time = DateTime.Now.ToShortTimeString();
+//            Console.WriteLine($"Time: {time}");
+//            await next();   // вызываем следующий middleware
+//        });
+
+//        // отправляем ответ
+//        appBuilder.Run(async context =>
+//        {
+//            var time = DateTime.Now.ToShortTimeString();
+//            await context.Response.WriteAsync($"Time: {time}");
+//        });
+//    });
+
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("ASP.NET CORE");
+//});
+
+//app.Run();
+//-----------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.MapWhen(
+//    context => context.Request.Path == "/time", // условие: если путь запроса "/time"
+//    appBuilder => appBuilder.Run(async context =>
+//    {
+//        var time = DateTime.Now.ToShortTimeString();
+//        await context.Response.WriteAsync($"current time: {time}");
+//    })
+//);
+
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("ASP.NET CORE");
+//});
+
+//app.Run();
+//-------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.Map("/time", appBuilder =>
+//{
+//    var time = DateTime.Now.ToShortTimeString();
+
+//    // логгируем данные - выводим на консоль приложения
+//    appBuilder.Use(async (context, next) =>
+//    {
+//        Console.WriteLine($"Time: {time}");
+//        await next();   // вызываем следующий middleware
+//    });
+
+//    appBuilder.Run(async context => await context.Response.WriteAsync($"Time: {time}"));
+//});
+
+//app.Run(async (context) => await context.Response.WriteAsync("ASP.NET CORE"));
+
+//app.Run();
+//-------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.UseMiddleware<TokenMiddleware>();
+
+//app.Run(async (context) => await context.Response.WriteAsync("ASP.NET CORE"));
+
+//app.Run();
+//-------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.UseToken();
+
+//app.Run(async (context) => await context.Response.WriteAsync("ASP.NET CORE"));
+
+//app.Run();
+//-------------------------------------------------------------------------
+//var builder = WebApplication.CreateBuilder();
+//var app = builder.Build();
+
+//app.UseToken("555555");
+
+//app.Run(async (context) => await context.Response.WriteAsync("ASP.NET CORE"));
+
+//app.Run();
+//-------------------------------------------------------------------------
 var builder = WebApplication.CreateBuilder();
 var app = builder.Build();
 
-app.Run(async (context) =>
-{
-    var response = context.Response;
-    var request = context.Request;
-
-    response.ContentType = "text/html; charset=utf-8";
-
-    if (request.Path == "/upload" && request.Method == "POST")
-    {
-        IFormFileCollection files = request.Form.Files;
-        // путь к папке, где будут храниться файлы
-        var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
-        // создаем папку для хранения файлов
-        Directory.CreateDirectory(uploadPath);
-
-        foreach (var file in files)
-        {
-            // путь к папке uploads
-            string fullPath = $"{uploadPath}/{file.FileName}";
-
-            // сохраняем файл в папку uploads
-            using (var fileStream = new FileStream(fullPath, FileMode.Create))
-            {
-                await file.CopyToAsync(fileStream);
-            }
-        }
-        await response.WriteAsync("Файлы успешно загружены");
-    }
-    else
-    {
-        await response.SendFileAsync("html/index.html");
-    }
-});
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<AuthenticationMiddleware>();
+app.UseMiddleware<RoutingMiddleware>();
 
 app.Run();
